@@ -65,6 +65,19 @@ Requirements:
     - sortable by timestamp (latest first or oldest first)
 
 
+### Gallery
+
+<img src="imgs/1_intro.png" width="45%"></img> 
+<img src="imgs/1_game.png" width="45%"></img> 
+
+<img src="imgs/2_intro.png" width="45%"></img>
+<img src="imgs/2_game.png" width="45%"></img>
+
+<img src="imgs/3_intro.png" width="45%"></img>
+<img src="imgs/3_game.png" width="45%"></img>
+
+<img src="imgs/4_intro.png" width="45%"></img>
+<img src="imgs/4_game.png" width="45%"></img>
 
 
 ---
