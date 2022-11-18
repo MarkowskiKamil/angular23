@@ -5,6 +5,9 @@
 ### 1. Angular as a framework
 [presentation](https://edu.chrum.it/angular23/lecture_1.html) | [pdf](https://edu.chrum.it/angular23/pdfs/Angular_developer.lecture_1.pdf) 
 
+### 2. Typescript for angular developer
+[presentation](https://edu.chrum.it/angular23/lecture_2.html) | [pdf](https://edu.chrum.it/angular23/pdfs/Angular_developer.lecture_2.pdf)
+
 
 ---
 
