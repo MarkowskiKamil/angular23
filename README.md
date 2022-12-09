@@ -8,6 +8,8 @@
 ### 2. Typescript for angular developer
 [presentation](https://edu.chrum.it/angular23/lecture_2.html) | [pdf](https://edu.chrum.it/angular23/pdfs/Angular_developer.lecture_2.pdf)
 
+### 3. Template syntax
+[presentation](https://edu.chrum.it/angular23/lecture_3.html) | [pdf](https://edu.chrum.it/angular23/pdfs/Angular_developer.lecture_3.pdf)
 
 ---
 
