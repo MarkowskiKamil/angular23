@@ -12,5 +12,11 @@
  *
  */
 
+import {Supermarket} from "./supermarket";
+import {products} from "./products";
+
+const supermarket = new Supermarket();
+supermarket.addSupplies(products);
+supermarket.advertise();
 
 

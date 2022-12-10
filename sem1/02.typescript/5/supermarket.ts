@@ -1,16 +1,18 @@
-class Supermarket {
-    private _fruits = [];
-    private _sweets = [];
-    private _alcohol = [];
-    private _other = [];
+import {Product} from "./products";
+
+export class Supermarket {
+    private _fruits: Array<Product>  = [];
+    private _sweets: Array<Product> = [];
+    private _alcohol: Array<Product> = [];
+    private _other: Array<Product> = [];
 
 
-    addSupplies(items) {
+    addSupplies(items: Array<Product>) {
         for (const item of items) {
             if (item.type === 'fruit') {
                 this._fruits.push(item);
 
-            } else if (item.type === 'fruitz') {
+            } else if (item.type === 'sweets') {
                 this._sweets.push(item);
 
             } else if (item.type === 'alcohol') {
@@ -50,7 +52,7 @@ class Supermarket {
         console.log('--------------------------------------------------------------------------------------------')
     }
 
-    private _printCategory(items) {
+    private _printCategory(items: Array<Product>) {
         for (const item of items) {
             console.log(item.name + ' (' + item.qty + ' available)');
         }

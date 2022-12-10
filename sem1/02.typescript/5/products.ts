@@ -1,4 +1,18 @@
-const products = [
+export interface Product {
+    name: string;
+    qty: number;
+    type: 'fruit' | 'sweets' | 'alcohol' | 'collectible' | 'halloween';
+}
+
+enum ProductType {
+    FRUIT,
+    SWEETS,
+    COLLECTIBLE,
+    HALLOWEEN,
+    ALCOHOL
+}
+
+export const products: Array<Product> = [
     {
         type: 'fruit',
         name: 'Apples',
@@ -10,7 +24,7 @@ const products = [
         qty: 2
     },
     {
-        type: 'sweet',
+        type: 'sweets',
         name: 'Candies',
         qty: 1
     },
