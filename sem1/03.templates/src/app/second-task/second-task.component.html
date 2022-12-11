@@ -1,0 +1,17 @@
+<h3>People in the room</h3>
+
+<p *ngIf="current >= max">the room is full</p>
+
+Max: {{ max }}
+<br/>
+<span [style.background-color]="color">
+  Current: {{ current }}
+</span>
+
+<br/>
+<br/>
+
+<button [disabled]="current >= max"
+        (click)="increase()">+1</button>
+
+<button (click)="decrease()">-1</button>
