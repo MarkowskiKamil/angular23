@@ -1,0 +1,19 @@
+<h2>People in the room</h2>
+
+Max number: {{ max }}
+<br/>
+Current number: {{ people.length }}
+<br/>
+
+<input [(ngModel)]="name"/>
+<button [disabled]="!name" (click)="add()">Add</button>
+<br/>
+
+<h3>Currently in the room</h3>
+<button [disabled]="!people.length" (click)="clearList()">Clear</button>
+<br/>
+
+<span *ngFor="let person of people;let idx = index">
+  {{ idx+1 }} {{ person }} <button (click)="remove(idx)">X</button><br/>
+</span>
+
