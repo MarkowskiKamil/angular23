@@ -1,0 +1,31 @@
+<h3> People in the room </h3>
+<p>
+  Max number: {{ max }}
+</p>
+<p [class]="colorClass">
+  Current number: {{ data.length }}
+</p>
+
+<input [(ngModel)]="name"/>
+<select [(ngModel)]="preference">
+  <option *ngFor="let opt of preferenceOptions"
+          [value]="opt">{{ opt }}
+  </option>
+</select>
+
+<button
+  [disabled]="!name || !preference || data.length >= max"
+  (click)="add()">Add</button>
+
+
+
+<h4>Currently in the room:</h4>
+<button (click)="clear()">Clear</button>
+
+<ol>
+  <li *ngFor="let item of data; let i = index">
+    {{ item.name }} - likes {{ item.preference }}.
+    <button (click)="delete(i)"> X</button>
+  </li>
+</ol>
+

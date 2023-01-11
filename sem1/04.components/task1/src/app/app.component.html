@@ -1,0 +1,24 @@
+<h3>Who are you?</h3>
+
+<input [(ngModel)]="name"
+       [disabled]="!editing"
+       placeholder="Name"/>
+<br/>
+<input [(ngModel)]="familyName"
+       [disabled]="!editing"
+       placeholder="Family name"/>
+<br/>
+
+<button *ngIf="editing"
+        (click)="submit()">Submit</button>
+<button *ngIf="!editing"
+        (click)="edit()">Edit</button>
+
+<hr/>
+
+<div *ngIf="!editing">
+
+  Actions<br/>
+  <button (click)="welcome()" >Welcome</button>
+  <button (click)="byebye()" >ByeBye</button>
+</div>
