@@ -1,23 +1,11 @@
 <h3>Who are you?</h3>
 
-<input [(ngModel)]="name"
-       [disabled]="!editing"
-       placeholder="Name"/>
-<br/>
-<input [(ngModel)]="familyName"
-       [disabled]="!editing"
-       placeholder="Family name"/>
-<br/>
-
-<button *ngIf="editing"
-        (click)="submit()">Submit</button>
-<button *ngIf="!editing"
-        (click)="edit()">Edit</button>
+<app-person-form
+  (formChange)="onFullnameChanged($event)"></app-person-form>
 
 <hr/>
 
-<div *ngIf="!editing">
-
+<div *ngIf="fullName">
   Actions<br/>
   <button (click)="welcome()" >Welcome</button>
   <button (click)="byebye()" >ByeBye</button>

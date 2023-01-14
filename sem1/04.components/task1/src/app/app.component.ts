@@ -6,23 +6,12 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public name: string = '';
-  public familyName: string = '';
-
-  public editing = true;
-
   public fullName: string | null = null;
-
   constructor() {
   }
 
-  public submit() {
-    this.editing = false;
-    this.fullName = this.name + ' ' + this.familyName;
-  }
-
-  public edit() {
-    this.editing = true;
+  public onFullnameChanged(fullname: string) {
+    this.fullName = fullname;
   }
 
   public welcome() {
