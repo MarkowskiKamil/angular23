@@ -1,0 +1,29 @@
+<h2>People in the room</h2>
+
+Max number: {{ max }}
+<br/>
+Current number: {{ data.length }}
+<br/>
+
+<input [(ngModel)]="name"/>
+<select [(ngModel)]="preference">
+  <option>Angular</option>
+  <option>React</option>
+</select>
+
+<button
+  [disabled]="!name || !preference"
+  (click)="add()">Add</button>
+<br/>
+
+<h3>Currently in the room</h3>
+<button>Clear</button>
+<br/>
+
+<ul>
+  <li *ngFor="let item of data; let idx = index">
+    {{ item.name }} - likes {{ item.preference }}
+    <button (click)="edit(idx)">edit</button>
+    <button (click)="remove(idx)">x</button>
+  </li>
+</ul>

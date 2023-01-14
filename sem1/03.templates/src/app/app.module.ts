@@ -6,12 +6,14 @@ import {FormsModule} from "@angular/forms";
 import { FirstTaskComponent } from './first-task/first-task.component';
 import { SecondTaskComponent } from './second-task/second-task.component';
 import {ThirdComponent} from "./third/third.component";
+import { FourthComponent } from './fourth/fourth.component';
 @NgModule({
   declarations: [
     AppComponent,
     FirstTaskComponent,
     SecondTaskComponent,
-    ThirdComponent
+    ThirdComponent,
+    FourthComponent
   ],
   imports: [
     BrowserModule,
