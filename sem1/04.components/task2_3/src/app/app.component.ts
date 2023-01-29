@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-interface PersonAndPreference {
+export interface PersonAndPreference {
   name: string;
   preference: string;
 }
@@ -11,14 +11,10 @@ interface PersonAndPreference {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public preferenceOptions = ['Angular', 'React', 'Vue'];
   public max: number = 4;
   public colorClass: string = 'basic';
 
-  public name = '';
-  public preference = '';
-
-  public data: Array<PersonAndPreference> = [
+  public peopleInTheRoom: Array<PersonAndPreference> = [
     {
       name: 'Ciri',
       preference: 'Angular'
@@ -33,24 +29,21 @@ export class AppComponent {
     },
   ];
 
-  public add() {
-      this.data.push({
-        name: this.name,
-        preference: this.preference
+  public add(data: PersonAndPreference) {
+      this.peopleInTheRoom.push({
+        name: data.name,
+        preference: data.preference
       });
 
       this._updateColor();
-
-      this.name = '';
-      this.preference = '';
   }
 
 
   private _updateColor() {
-    if (this.data.length >= this.max) {
+    if (this.peopleInTheRoom.length >= this.max) {
       this.colorClass = 'max';
 
-    } else if (this.max - this.data.length <= 3) {
+    } else if (this.max - this.peopleInTheRoom.length <= 3) {
       this.colorClass = 'warning';
 
     } else {
@@ -60,12 +53,12 @@ export class AppComponent {
 
 
   public clear() {
-    this.data = [];
+    this.peopleInTheRoom = [];
     this._updateColor();
   }
 
   public delete(index: number) {
-    this.data.splice(index, 1);
+    this.peopleInTheRoom.splice(index, 1);
     this._updateColor();
   }
 

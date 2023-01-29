@@ -3,29 +3,18 @@
   Max number: {{ max }}
 </p>
 <p [class]="colorClass">
-  Current number: {{ data.length }}
+  Current number: {{ peopleInTheRoom.length }}
 </p>
 
-<input [(ngModel)]="name"/>
-<select [(ngModel)]="preference">
-  <option *ngFor="let opt of preferenceOptions"
-          [value]="opt">{{ opt }}
-  </option>
-</select>
-
-<button
-  [disabled]="!name || !preference || data.length >= max"
-  (click)="add()">Add</button>
-
+<app-form
+  (submit)="add($event)"
+></app-form>
 
 
 <h4>Currently in the room:</h4>
 <button (click)="clear()">Clear</button>
 
-<ol>
-  <li *ngFor="let item of data; let i = index">
-    {{ item.name }} - likes {{ item.preference }}.
-    <button (click)="delete(i)"> X</button>
-  </li>
-</ol>
+<app-list
+  (deleteClicked)="delete($event)"
+  [data]="peopleInTheRoom"></app-list>
 

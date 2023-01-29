@@ -1,0 +1,10 @@
+<input [(ngModel)]="name"/>
+<select [(ngModel)]="preference">
+  <option *ngFor="let opt of preferenceOptions"
+          [value]="opt">{{ opt }}
+  </option>
+</select>
+
+<button
+  [disabled]="!name || !preference"
+  (click)="add()">Add</button>
