@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {PersonAndPreference} from "../app.component";
 
 @Component({
@@ -7,7 +7,7 @@ import {PersonAndPreference} from "../app.component";
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  public preferenceOptions = ['Angular', 'React', 'Vue'];
+  @Input() public preferenceOptions!: Array<string>;
   public name = '';
   public preference = '';
 

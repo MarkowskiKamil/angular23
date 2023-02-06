@@ -11,6 +11,7 @@ export interface PersonAndPreference {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public preferenceOptions = ['Angular', 'React', 'Vue', 'Svelte'];
   public max: number = 4;
   public colorClass: string = 'basic';
 
@@ -34,6 +35,8 @@ export class AppComponent {
         name: data.name,
         preference: data.preference
       });
+
+      this.peopleInTheRoom = [...this.peopleInTheRoom];
 
       this._updateColor();
   }
@@ -59,6 +62,7 @@ export class AppComponent {
 
   public delete(index: number) {
     this.peopleInTheRoom.splice(index, 1);
+    this.peopleInTheRoom = [...this.peopleInTheRoom];
     this._updateColor();
   }
 
