@@ -1,0 +1,36 @@
+<form #formEl #contactForm="ngForm"
+  (submit)="onSubmit(contactForm.form.value)">
+  <br/>
+  Name
+  <input name="name"
+         minlength="3"
+         required
+         ngModel/>
+  <br/>
+  Email
+  <input name="email"
+         #emailModel="ngModel"
+         required
+         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+         ngModel/>
+  <p *ngIf="emailModel.touched && emailModel.invalid">
+    Email is bad
+  </p>
+  <br/>
+  Traslated
+  <input name="translated"
+         #translatedModel="ngModel"
+         ngModel type="checkbox"/>
+  <br/>
+  <select name="language"
+          [required]="!!translatedModel.value"
+          ngModel>
+    <option>English</option>
+    <option>Polish</option>
+  </select>
+
+  <button [disabled]="contactForm.valid === false">
+    Submit
+  </button>
+
+</form>
