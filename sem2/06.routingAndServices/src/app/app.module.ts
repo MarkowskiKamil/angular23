@@ -8,6 +8,7 @@ import {ProductsListComponent} from "./shop/products-list/products-list.componen
 import {SortPipe} from "./sort.pipe";
 import {FormsModule} from "@angular/forms";
 import { ShopComponent } from './shop/shop.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,12 @@ import { ShopComponent } from './shop/shop.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: 'shop', component: ShopComponent },
+      { path: 'age-verification', component: AgeVerificationComponent },
+      { path: "**", redirectTo: "age-verification"},
+  ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
