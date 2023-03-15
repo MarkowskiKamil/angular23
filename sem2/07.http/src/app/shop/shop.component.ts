@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {Category, Product} from "../definitions";
-import {categories} from "../data";
 import {Router} from "@angular/router";
 import {UserInfoService} from "../user-info.service";
+import {ProductsService} from "../products.service";
 
 @Component({
   selector: 'app-shop',
@@ -10,14 +10,19 @@ import {UserInfoService} from "../user-info.service";
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent {
-  public allCategories: Array<Category> = categories;
+  public allCategories: Array<Category> = [];
   public productsToDisplay: Array<Product> = [];
   public productsInCart: Array<Product> = [];
 
   constructor(
     private _router: Router,
-    private _userInfoService: UserInfoService)
+    private _userInfoService: UserInfoService,
+    private _productsService: ProductsService
+  )
   {
+    this._productsService.load().subscribe((data) => {
+      this.allCategories = data;
+    });
     this.isAgeVerifiedCheck();
   }
 
