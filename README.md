@@ -20,6 +20,11 @@
 ### 6. Basic routing, services and DI
 [presentation](https://edu.chrum.it/angular23/lecture_6.html) | [pdf](https://edu.chrum.it/angular23/pdfs/Angular_developer.lecture_6.pdf) | [example](https://stackblitz.com/edit/angular-routing-and-services)
 
+### 7. Lifecycle hooks, http
+[presentation](https://edu.chrum.it/angular23/lecture_7.html) | [pdf](https://edu.chrum.it/angular23/pdfs/Angular_developer.lecture_7.pdf)
+| [hooks example](https://stackblitz.com/edit/angular-sum-lifecycle-hooks)
+| [http example](https://stackblitz.com/edit/angular-http-requests-example)
+
 
 ---
 
@@ -42,6 +47,10 @@ Emoji coded:
   - :rocket: Smart componentization - discussable, no pressure, [heres some inspiration](https://edu.chrum.it/angular23/lecture_6.html#/0/7)
 2. Services
   - :pray: storing and reading data - [details](https://edu.chrum.it/angular23/lecture_6.html#/0/8)
+3. Http
+    - :pray: reading and displaying highscores - [details](https://edu.chrum.it/angular23/lecture_7.html#/0/5)
+    - :rocket: token verification - [details](https://edu.chrum.it/angular23/lecture_7.html#/0/6)
+    - :rocket: posting scores, my scores - [details](https://edu.chrum.it/angular23/lecture_7.html#/0/7)
 
 
 ### Gallery
