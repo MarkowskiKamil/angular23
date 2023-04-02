@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Category, Product} from "../definitions";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UserInfoService} from "../user-info.service";
 import {ProductsService} from "../products.service";
 import {delay} from "rxjs";
@@ -20,17 +20,21 @@ export class ShopComponent {
 
   constructor(
     private _router: Router,
+    private _route: ActivatedRoute,
     private _userInfoService: UserInfoService,
     private _productsService: ProductsService
   )
   {
-    this.isAgeVerifiedCheck();
-  }
+    const categoryId = this._route.snapshot.params['categoryId'];
 
-  public isAgeVerifiedCheck() {
-    if (this._userInfoService.isUserOfAge() === false) {
-      this._router.navigate(['/age-verification'])
-    }
+    this.allCategories$.subscribe((data) => {
+      const selectedCategory = data.find((category) => +category.id === +categoryId);
+      if (selectedCategory) {
+        this.onCategorySelected(selectedCategory);
+      }
+    })
+
+    console.log(categoryId);
   }
 
   public onCategorySelected(category: Category): void {

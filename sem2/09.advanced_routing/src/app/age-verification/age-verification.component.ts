@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormGroup, NgModel} from '@angular/forms';
 import {Router} from '@angular/router';
 import {UserInfoService} from "../user-info.service";
+import {CleanCategory, ProductsService} from "../products.service";
 
 @Component({
   selector: 'app-age-verification',
@@ -12,10 +13,18 @@ export class AgeVerificationComponent {
   public years: Array<number> = [];
   private _currentYear = new Date().getFullYear();
 
+  public categories: Array<CleanCategory> = [];
+
   constructor(
     private _router: Router,
-    private _context: UserInfoService
+    private _context: UserInfoService,
+    private _productsService: ProductsService
   ) {
+
+    this._productsService.categories$.subscribe((data) => {
+      this.categories = data;
+    })
+
     const minYear = this._currentYear - 100;
     for (let year = this._currentYear; year >= minYear; year--) {
       this.years.push(year);
@@ -38,9 +47,11 @@ export class AgeVerificationComponent {
       return alert('Your age and year you were born do not match');
     }
 
+    const categoryId = form.value.category;
+
     alert('Success, access granted!');
     this._context.markAgeAsVerified();
-    this._router.navigate(['/shop']);
+    this._router.navigate(['/shop', categoryId]);
   }
 
 }

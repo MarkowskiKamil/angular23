@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import { ShopComponent } from './shop/shop.component';
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
+import {AgeCheckGuard} from "./age-check.guard";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,15 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'shop', component: ShopComponent },
+      {
+        path: 'shop/:categoryId',
+        component: ShopComponent,
+        canActivate: [AgeCheckGuard]
+      },
+      { path: 'shop',
+        component: ShopComponent,
+        canActivate: [AgeCheckGuard]
+      },
       { path: 'age-verification', component: AgeVerificationComponent },
       { path: "**", redirectTo: "age-verification"},
     ]),

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Product} from "./definitions";
-import {forkJoin, map} from "rxjs";
+import {forkJoin, map, share} from "rxjs";
 
-interface CleanCategory {
+export interface CleanCategory {
   id: number;
   name: string;
 }
@@ -12,7 +12,10 @@ interface CleanCategory {
   providedIn: 'root'
 })
 export class ProductsService {
-  public categories$ = this._http.get<Array<CleanCategory>>('https://edu.chrum.it/data/categories.json');
+  public categories$ = this._http.get<Array<CleanCategory>>('https://edu.chrum.it/data/categories.json')
+    .pipe(
+      share()
+    );
   public products$ = this._http.get<Array<Product>>('https://edu.chrum.it/data/clean_products.json');
 
   public categoriesWithProducts$ = forkJoin([
