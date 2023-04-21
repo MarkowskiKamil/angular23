@@ -33,6 +33,11 @@
 [presentation](https://edu.chrum.it/angular23/lecture_9.html) | [pdf](https://edu.chrum.it/angular23/pdfs/Angular_developer.lecture_9.pdf)
 | [example](https://stackblitz.com/edit/advanced-routing)
 
+### 10. Reactive forms
+[presentation](https://edu.chrum.it/angular23/lecture_10.html) | [pdf](https://edu.chrum.it/angular23/pdfs/Angular_developer.lecture_10.pdf)
+| [example](https://stackblitz.com/edit/ng-dev-reactive-forms)
+
+
 ---
 
 ## **Exam questions**
@@ -61,6 +66,8 @@ Emoji coded:
 4. Routing params
    - :pray: Add high contrast mode controlled by route param - [details](https://edu.chrum.it/angular23/lecture_9.html#/0/5)
    - :rocket::rocket: Guarding game route - [details](https://edu.chrum.it/angular23/lecture_9.html#/0/6)
+5. Reactive forms
+   - :pray: Convert from on intro page to reactive forms [details](https://edu.chrum.it/ng2021/lecture_10.html#/0/4)
 
 
 ### Gallery
