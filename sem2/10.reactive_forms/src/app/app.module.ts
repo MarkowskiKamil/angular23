@@ -6,7 +6,7 @@ import {AgeVerificationComponent} from "./age-verification/age-verification.comp
 import {CategorySelectorComponent} from "./shop/category-selector/category-selector.component";
 import {ProductsListComponent} from "./shop/products-list/products-list.component";
 import {SortPipe} from "./sort.pipe";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ShopComponent } from './shop/shop.component';
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
@@ -24,6 +24,7 @@ import {AgeCheckGuard} from "./age-check.guard";
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: 'shop/:categoryId',
