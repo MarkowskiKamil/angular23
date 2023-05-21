@@ -1,6 +1,12 @@
-<p>List</p>
+
+
+
+<p [class.redBG]="flag">
+  List
+</p>
 
 <app-list [data]="data">
+
   <ng-template #itemTemplate let-item>
     <button (click)="onClick(item.price)">
       {{ item.name }}: {{ item.price | currency }}
