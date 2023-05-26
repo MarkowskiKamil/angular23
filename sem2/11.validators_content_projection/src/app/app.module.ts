@@ -11,6 +11,8 @@ import { ShopComponent } from './shop/shop.component';
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {AgeCheckGuard} from "./age-check.guard";
+import {CartComponent} from "./cart/cart.component";
+import {ProductComponent} from "./product/product.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {AgeCheckGuard} from "./age-check.guard";
     CategorySelectorComponent,
     ProductsListComponent,
     SortPipe,
-    ShopComponent
+    ShopComponent,
+    CartComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,11 @@ import {AgeCheckGuard} from "./age-check.guard";
       },
       { path: 'shop',
         component: ShopComponent,
-        canActivate: [AgeCheckGuard]
+        // canActivate: [AgeCheckGuard]
+      },
+      {
+        path: 'cart',
+        component: CartComponent,
       },
       { path: 'age-verification', component: AgeVerificationComponent },
       { path: "**", redirectTo: "age-verification"},

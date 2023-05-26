@@ -12,19 +12,12 @@
   </div>
 
   <div class="row pt-5">
-    <div class="card m-1 text-center" style="width: 13rem;"
-         *ngFor="let product of products | sort:'price':sortDirection">
-      <img src="https://place-hold.it/300x200?fontsize=30&text={{ product.name | uppercase | slice:0:1 }}" class="card-img-top">
-      <div class="card-body">
-        <h3 class="card-title">{{ product.name }}</h3>
-        <h5 class="card-title">{{ product.price | currency:'USD' }}</h5>
-      </div>
-      <div class="card-footer text-muted">
-        <button (click)="addToCart(product)">
-          Add to cart
-        </button>
-      </div>
-    </div>
+
+      <app-product *ngFor="let product of products | sort:'price':sortDirection"
+                   (addToCart)="addToCart(product)"
+                   [data]="product">
+      </app-product>
+
   </div>
 </div>
 <div>

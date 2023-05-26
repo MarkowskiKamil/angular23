@@ -3,7 +3,8 @@ import {Category, Product} from "../definitions";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserInfoService} from "../user-info.service";
 import {ProductsService} from "../products.service";
-import {delay} from "rxjs";
+import {delay, map} from "rxjs";
+import {CartService} from "../cart.service";
 
 @Component({
   selector: 'app-shop',
@@ -13,16 +14,19 @@ import {delay} from "rxjs";
 export class ShopComponent {
   public allCategories$ = this._productsService.categoriesWithProducts$
     .pipe(
-      delay(3000)
+      delay(1000)
     );
   public productsToDisplay: Array<Product> = [];
-  public productsInCart: Array<Product> = [];
+
+  public cartItemsCount$ = this._cart.items$
+    .pipe(map((items) => items.length));
 
   constructor(
     private _router: Router,
     private _route: ActivatedRoute,
     private _userInfoService: UserInfoService,
-    private _productsService: ProductsService
+    private _productsService: ProductsService,
+    private _cart: CartService
   )
   {
     const categoryId = this._route.snapshot.params['categoryId'];
@@ -43,6 +47,6 @@ export class ShopComponent {
 
   public addToCart(product: Product): void {
     console.log("Adding to cart: " + product.name);
-    this.productsInCart.push(product);
+    this._cart.add(product);
   }
 }
